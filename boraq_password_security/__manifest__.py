@@ -20,6 +20,7 @@
     },
     "website": "https://github.com/OCA/server-auth",
     "license": "LGPL-3",
+    "images": ['static/description/cover.png'],
     "data": [
         'views/password_security.xml',
         'views/res_company_view.xml',
