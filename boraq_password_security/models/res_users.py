@@ -49,7 +49,6 @@ class ResUsers(models.Model):
         vals['password_write_date'] = fields.Datetime.now()
         return super(ResUsers, self).create(vals)
 
-    
     def write(self, vals):
         if vals.get('password'):
             self._check_password(vals['password'])
@@ -86,7 +85,6 @@ class ResUsers(models.Model):
     def get_estimation(self, password):
         return zxcvbn.zxcvbn(password)
 
-    
     def password_match_message(self):
         self.ensure_one()
         company_id = self.company_id
@@ -111,13 +109,11 @@ class ResUsers(models.Model):
                        ] + message
         return '\r'.join(message)
 
-    
     def _check_password(self, password):
         self._check_password_rules(password)
         self._check_password_history(password)
         return True
 
-    
     def _check_password_rules(self, password):
         self.ensure_one()
         if not password:
